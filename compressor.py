@@ -121,7 +121,7 @@ class Tokenizer:
     def tokenize_number(self) -> None:
         c = self.code[self.idx]
 
-        if c.isdigit() or c in "'ULL.fFxull":
+        if c.isdigit() or c in "xX_'ULL.fFxull" or c.lower() in "abcdef":
             self.cur_token += c
             self.idx += 1
             return
